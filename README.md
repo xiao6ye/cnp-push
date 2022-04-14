@@ -1,4 +1,5 @@
-# cnp-push
-Subscription and publication
+# Go Pub/Sub
+An in-process simple publish/subscribe library for `Golang` .
 
-https://github.com/alash3al/go-pubsub
+# Known Users
+- [go-pubsub](https://github.com/alash3al/go-pubsub)
