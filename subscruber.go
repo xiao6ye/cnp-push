@@ -34,7 +34,7 @@ func NewSubscriber() (*Subscriber, error) {
 
 	return &Subscriber{
 		id:        hex.EncodeToString(id),
-		messages:  make(chan *Message),
+		messages:  make(chan *Message, 100),
 		createdAt: time.Now().UnixNano(),
 		destroyed: false,
 		lock:      sync.RWMutex{},
@@ -104,8 +104,7 @@ func (s *Subscriber) Signal(m *Message) *Subscriber {
 // close the underlying channels/resources
 func (s *Subscriber) destroy() {
 	s.lock.Lock()
+	defer s.lock.Unlock()
 	s.destroyed = true
-	s.lock.Unlock()
-
 	close(s.messages)
 }

@@ -1,4 +1,4 @@
-// Package go-pubsub
+// Package go_pubsub
 // @Title  go-pubsub
 // @Description  消息数据
 // @Author  zxx1224@gmail.com  2022/4/12 3:33 PM
